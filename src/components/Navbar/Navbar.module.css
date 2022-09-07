@@ -1,5 +1,5 @@
-.nav {
-    grid-area: n;
-    background-color: rgb(0, 255, 68);
-    padding: 20px;
-  }
+#components-layout-demo-side .logo {
+    height: 32px;
+    margin: 16px;
+    background: rgba(255, 255, 255, 0.3);
+}
