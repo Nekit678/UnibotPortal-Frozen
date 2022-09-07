@@ -41,10 +41,10 @@ const items: MenuItem[] = [
 ];
 
 function Navbar() {
-    const [collapsed, setCollapsed] = useState(false);
+    const [collapsed, setCollapsed] = useState(true);
 
     return (
-        <Sider collapsed={collapsed} onMouseOver = {() => setCollapsed(false)} onMouseOut = {() => setCollapsed(true)}>
+        <Sider style={{height:"100%", position: "fixed"}} collapsed={collapsed} onMouseOver = {() => setCollapsed(false)} onMouseOut = {() => setCollapsed(true)}>
             <div className={s.logo}>
                 <Image src='https://www.codewars.com/packs/assets/logo.61192cf7.svg'></Image>
             </div>
