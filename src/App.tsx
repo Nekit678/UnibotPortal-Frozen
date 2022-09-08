@@ -14,19 +14,15 @@ const { Content, Footer } = Layout;
 function App() {
   return (
     <Layout style={{ minHeight: '100vh' }}>
-      {/* <HeaderContainer></HeaderContainer> */}
-      <Navbar></Navbar>
-      <Layout className="site-layout">
-
-        <Content style={{ margin: '0 60px' }}>
-          <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
-            <Profile></Profile>
-          </div>
+      <Layout>
+        <Content style={{ margin: '10px 160px' }}>
+          <Profile></Profile>
         </Content>
-
-        <Footer style={{ textAlign: 'center' }}>UnibotPortal ©2022 Created by JustLena</Footer>
-
+        <Navbar></Navbar>
       </Layout>
+      <div>
+        <Footer style={{ textAlign: 'center' }}>UnibotPortal ©2022 Created by JustLena</Footer>
+      </div>
     </Layout>
   );
 }
