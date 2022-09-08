@@ -8,9 +8,10 @@ import {
     UserOutlined,
 } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
-import {Layout, Menu, Image } from 'antd'
+import { Layout, Menu, Image } from 'antd'
+import Button from 'antd/lib/button';
 
-const {Sider} = Layout;
+const { Sider } = Layout;
 
 type MenuItem = Required<MenuProps>['items'][number];
 
@@ -44,9 +45,10 @@ function Navbar() {
     const [collapsed, setCollapsed] = useState(true);
 
     return (
-        <Sider style={{height:"100%", position: "fixed"}} collapsed={collapsed} onMouseOver = {() => setCollapsed(false)} onMouseOut = {() => setCollapsed(true)}>
-            <div className={s.logo}>
+        <Sider style={{ height: "100%", position: "fixed" }} collapsed={collapsed} onMouseOver={() => setCollapsed(false)} onMouseOut={() => setCollapsed(true)}>
+            <div className={s.info}>
                 <Image src='https://www.codewars.com/packs/assets/logo.61192cf7.svg'></Image>
+                <Button style={{ width: "100%" }} type='primary'>Login</Button>
             </div>
             <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} />
         </Sider>
