@@ -47,7 +47,7 @@ function Navbar() {
     return (
         <Sider style={{ height: "100%", position: "fixed" }} collapsed={collapsed} onMouseOver={() => setCollapsed(false)} onMouseOut={() => setCollapsed(true)}>
             <div className={s.info}>
-                <Image src='https://www.codewars.com/packs/assets/logo.61192cf7.svg'></Image>
+                <Image src='https://i.pinimg.com/236x/2c/60/cb/2c60cb34a209daa60ee0b6c53cd35688.jpg'></Image>
                 <Button style={{ width: "100%" }} type='primary'>Login</Button>
             </div>
             <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} />

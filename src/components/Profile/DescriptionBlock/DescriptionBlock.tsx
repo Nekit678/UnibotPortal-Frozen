@@ -9,7 +9,7 @@ function DescriptionBlock()
                 <Space size={"large"}>
                     <Badge.Ribbon placement='start' color='green' text="Online">
                         <Badge.Ribbon color='gray' text="LVL 10">
-                            <Image width={"100px"} src='https://www.codewars.com/packs/assets/logo.61192cf7.svg'></Image>
+                            <Image width={"100px"} src='https://i.pinimg.com/236x/2c/60/cb/2c60cb34a209daa60ee0b6c53cd35688.jpg'></Image>
                         </Badge.Ribbon>
                     </Badge.Ribbon>
 
