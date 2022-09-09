@@ -1,12 +1,8 @@
 import './App.css';
-import Preloader from './components/common/Preloader/Preloader';
-import 'antd/dist/antd.css';
 import { Layout } from 'antd';
-import Navbar from './components/Navbar/Navbar';
-import HeaderContainer from './components/Header/Header';
-import { useSelector } from 'react-redux/es/exports';
-import { RootState } from './redux/redux-store';
 import Profile from './components/Profile/Profile';
+import NavbarContainer from './components/Navbar/NavbarContainer';
+import { Route, Routes } from 'react-router-dom';
 
 const { Content, Footer } = Layout;
 
@@ -16,9 +12,11 @@ function App() {
     <Layout style={{ minHeight: '100vh' }}>
       <Layout>
         <Content style={{ margin: '10px 160px' }}>
-          <Profile></Profile>
+          <Routes>
+          <Route path='/profile' element={<Profile />} />
+          </Routes>
         </Content>
-        <Navbar></Navbar>
+        <NavbarContainer/>
       </Layout>
       <div>
         <Footer style={{ textAlign: 'center' }}>UnibotPortal ©2022 Created by JustLena</Footer>
