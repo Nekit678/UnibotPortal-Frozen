@@ -1,36 +1,42 @@
 import Preloader from './../common/Preloader/Preloader';
-import { Badge, Descriptions, Image, Segmented, Space } from 'antd';
+import { Avatar,Carousel, Comment,Segmented} from 'antd';
+import DescriptionBlock from './DescriptionBlock/DescriptionBlock';
+import Posts from './Posts/Posts';
 
 
 
 function Profile() {
     return (
         <div>
-            <Space size={"large"}>
-                <Badge.Ribbon placement='start' color='green' text="Online">
-                    <Badge.Ribbon color='red' text="LVL 10">
-                        <Image width={"100px"} src='https://www.codewars.com/packs/assets/logo.61192cf7.svg'></Image>
-                    </Badge.Ribbon>
-                </Badge.Ribbon>
-
-                <Descriptions>
-                    <Descriptions.Item label="Имя:">JustLena</Descriptions.Item>
-                    <Descriptions.Item label="Дата регистрации">09.09.2022</Descriptions.Item>
-                    <Descriptions.Item label="Подписки">10</Descriptions.Item>
-                    <Descriptions.Item label="Клан">Не состоит в клане</Descriptions.Item>
-                    <Descriptions.Item label="Был онлайн:">09.09.2022 13:37</Descriptions.Item>
-                    <Descriptions.Item label="Подписки">10</Descriptions.Item>
-                </Descriptions>
-            </Space>
+            <DescriptionBlock></DescriptionBlock>
             <div>
                 <br></br>
                 <br></br>
                 <Segmented block options={[
-                    'Daily',
-                    { label: 'Weekly', value: 'Weekly', disabled: true },
-                    'Monthly',
-                    { label: 'Quarterly', value: 'Quarterly', disabled: true }
+                    'Статистика',
+                    { label: 'Решения задач', value: 'Weekly', disabled: true },
+                    'Подписчики и подписки',
+                    { label: 'Посты', value: 'Quarterly', disabled: false }
                 ]} />
+            </div>
+
+            <div>
+                <br></br>
+
+                <Carousel autoplay dots={false}>
+                    {/* <div>
+                        Статистика
+                    </div>
+                    <div>
+                        Решения задач
+                    </div>
+                    <div>
+                        Подписчики и подписки
+                    </div> */}
+                    <div>
+                        <Posts></Posts>
+                    </div>
+                </Carousel>
             </div>
 
 
