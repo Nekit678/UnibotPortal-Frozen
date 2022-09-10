@@ -19,7 +19,8 @@ function Navbar({items}:{items:MenuItem[]}) {
             onMouseOver={() => setCollapsed(false)} onMouseOut={() => setCollapsed(true)}>
             <div className={s.info}>
                 <Image src='https://i.pinimg.com/236x/2c/60/cb/2c60cb34a209daa60ee0b6c53cd35688.jpg'></Image>
-                <Button style={{ width: "100%" }} type='primary'>Login</Button>
+                {collapsed?<></>:<Button style={{ width: "100%"}} type='primary'>Login</Button>}
+                
             </div>
             <Menu onClick={({key}) => navigate(key)} theme="dark" defaultSelectedKeys={[defKey?.pathname || ""]} mode="inline" items={items} />
         </Sider>

@@ -3,6 +3,7 @@ import { Layout } from 'antd';
 import Profile from './components/Profile/Profile';
 import NavbarContainer from './components/Navbar/NavbarContainer';
 import { Route, Routes } from 'react-router-dom';
+import ProfileContainer from './components/Profile/ProfileContainer';
 
 const { Content, Footer } = Layout;
 
@@ -13,7 +14,9 @@ function App() {
       <Layout>
         <Content style={{ margin: '10px 160px' }}>
           <Routes>
-          <Route path='/profile' element={<Profile />} />
+          <Route path='/profile' element={<ProfileContainer />} />
+          <Route path='/tasks' element={<div>Tasks</div>} />
+          <Route path='/leaderboard' element={<div>Leader Board</div>} />
           </Routes>
         </Content>
         <NavbarContainer/>
