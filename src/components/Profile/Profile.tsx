@@ -3,15 +3,18 @@ import {Carousel,Segmented} from 'antd';
 import DescriptionBlock from './DescriptionBlock/DescriptionBlock';
 import Posts from './Posts/Posts';
 import React from "react"
-
+import { useSelector } from 'react-redux';
+import { RootState } from "../../redux/redux-store"
+import { getProfileDescriptionBlockInfo } from './../../redux/selectors/profile-selector';
 
 
 function Profile() {
+    const desBlockInfo = useSelector((state:RootState) => (getProfileDescriptionBlockInfo(state)))
     const carouselRef: any = React.createRef();
-
+    
     return (
         <div>
-            <DescriptionBlock></DescriptionBlock>
+            <DescriptionBlock {...desBlockInfo}></DescriptionBlock>
             <div>
                 <br></br>
                 <br></br>
@@ -23,11 +26,9 @@ function Profile() {
                 ]} />
             </div>
 
-            {/* <Button onClick={() => carouselRef.current.goTo(1)}>sdasd</Button> */}
-
             <div>
                 <br></br>
-                <Carousel ref={carouselRef} dots={false}>
+                <Carousel speed={300} ref={carouselRef} dots={false}>
                     <div>
                         Статистика
                     </div>

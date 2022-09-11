@@ -1,8 +1,18 @@
-
-
 import { Badge, Descriptions, Image, Space } from 'antd';
 
-function DescriptionBlock(props: any)  //!change type!
+type DescriptionBlockProps = {
+    userLogin:string | null,
+    userLvl:number | null,
+    clan:string | null,
+    clanId:number | null,
+    online:boolean | null,
+    registerData:string | null,
+    lastOnlineData: string | null,
+    followingCount: number | null,
+    followersCount: number | null
+}
+
+function DescriptionBlock(props: DescriptionBlockProps)  //!change type!
 {
     return (
         <div style={{ backgroundColor: "lightgray", borderRadius: "10px" }}>
@@ -14,12 +24,12 @@ function DescriptionBlock(props: any)  //!change type!
                 </Badge.Ribbon>
 
                 <Descriptions>
-                    <Descriptions.Item label="Имя:">JustLena</Descriptions.Item>
-                    <Descriptions.Item label="Дата регистрации">09.09.2022</Descriptions.Item>
-                    <Descriptions.Item label="Подписки">10</Descriptions.Item>
-                    <Descriptions.Item label="Клан">Не состоит в клане</Descriptions.Item>
-                    <Descriptions.Item label="Был онлайн:">09.09.2022 13:37</Descriptions.Item>
-                    <Descriptions.Item label="Подписки">10</Descriptions.Item>
+                    <Descriptions.Item label="Имя">{props.userLogin}</Descriptions.Item>
+                    <Descriptions.Item label="Дата регистрации">{props.registerData}</Descriptions.Item>
+                    <Descriptions.Item label="Подписчики">{props.followersCount}</Descriptions.Item>
+                    <Descriptions.Item label="Клан">{props.clan}</Descriptions.Item>
+                    <Descriptions.Item label="Был онлайн">{props.lastOnlineData}</Descriptions.Item>
+                    <Descriptions.Item label="Подписки">{props.followingCount}</Descriptions.Item>
                 </Descriptions>
             </Space>
         </div>

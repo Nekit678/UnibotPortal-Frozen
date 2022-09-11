@@ -10,20 +10,20 @@ type initialStateType = {
     lastOnlineData: string | null,
     followingCount: number | null,
     followersCount: number | null,
-    followingUsers:any[], //!change type!
-    followersUsers:any[],  //!change type!
-    comments:any[]  //!change type 
+    followingUsers:any[] | null, //!change type!
+    followersUsers:any[] | null,  //!change type!
+    comments:any[] | null //!change type 
 }
 
 let initialState:initialStateType = {
-    userLogin: "JustLena1337",
+    userLogin: "JustLena",
     userLvl:100,
     clan: "Нет",
     clanId: 1,
     comments: [],
     followersCount:10,
     followersUsers: [],
-    followingCount:10,
+    followingCount:15,
     followingUsers:[],
     lastOnlineData:"10.10.2022",
     online: true,
