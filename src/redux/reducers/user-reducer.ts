@@ -2,6 +2,7 @@ import { createSlice} from "@reduxjs/toolkit";
 
 type initialStateType = {
     userLogin:string | null,
+    userPhoto: string | null,
     userLvl:number | null,
     clan:string | null,
     clanId:number | null,
@@ -17,8 +18,9 @@ type initialStateType = {
 
 let initialState:initialStateType = {
     userLogin: "JustLena",
-    userLvl:100,
-    clan: "Нет",
+    userPhoto: "https://i.pinimg.com/236x/2c/60/cb/2c60cb34a209daa60ee0b6c53cd35688.jpg",
+    userLvl:90,
+    clan: null,
     clanId: 1,
     comments: [],
     followersCount:10,

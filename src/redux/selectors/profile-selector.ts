@@ -3,6 +3,7 @@ import { RootState } from "../redux-store";
 
 
 export const getUserLogin = (state: RootState) => state.userInfo.userLogin;
+export const getUserPhoto = (state: RootState) => state.userInfo.userPhoto?state.userInfo.userPhoto:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ5srpTZoAXWINllDurGscx_Pqg_foehqAkQ&usqp=CAU";
 export const getUserLvl = (state: RootState) => state.userInfo.userLvl;
 export const getUserClan = (state: RootState) => state.userInfo.clan;
 export const getUserClanId = (state: RootState) => state.userInfo.clanId;
@@ -16,9 +17,9 @@ export const getUserFollowersUsers = (state: RootState) => state.userInfo.follow
 export const getUserComments = (state: RootState) => state.userInfo.comments;
 
 
-export const getProfileDescriptionBlockInfo = createSelector([getUserLogin, getUserLvl,getUserClan,getUserClanId,
-    getUserOnline,getUserRegisterData,getUserLastOnlineData,getUserFollowingCount,getUserFollowersCount], (userLogin,userLvl,clan,clanId,online,registerData,lastOnlineData,followingCount,followersCount) => {
+export const getProfileDescriptionBlockInfo = createSelector([getUserLogin, getUserPhoto, getUserLvl,getUserClan,getUserClanId,
+    getUserOnline,getUserRegisterData,getUserLastOnlineData,getUserFollowingCount,getUserFollowersCount], (userLogin,userPhoto,userLvl,clan,clanId,online,registerData,lastOnlineData,followingCount,followersCount) => {
     return{
-        userLogin,userLvl,clan,clanId,online,registerData,lastOnlineData,followingCount,followersCount
+        userLogin,userPhoto,userLvl,clan,clanId,online,registerData,lastOnlineData,followingCount,followersCount
     }
 })
