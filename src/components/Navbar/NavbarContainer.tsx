@@ -2,6 +2,7 @@ import {
     EditOutlined,
     RiseOutlined,
     UserOutlined,
+    CodeOutlined
 } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import Navbar from './Navbar';
@@ -27,6 +28,7 @@ function NavbarContainer() {
     const items: MenuItem[] = [
         getItem('Профиль', '/profile', <UserOutlined />),
         getItem('Задачки', '/tasks', <EditOutlined />),
+        getItem('Тренировка', '/training', <CodeOutlined />),
         getItem('50 лучших', '/leaderboard', <RiseOutlined />),
         // getItem('Team', 'sub2', <TeamOutlined />, [getItem('Team 1', '6'), getItem('Team 2', '8')]),
         // getItem('Files', '9', <FileOutlined />),

@@ -13,14 +13,14 @@ type DescriptionBlockProps = {
     followersCount: number | null
 }
 
-function DescriptionBlock(props: DescriptionBlockProps) //!color LVL logic! image!
+function DescriptionBlock(props: DescriptionBlockProps) //!color LVL logic!
 {
     return (
         <div style={{ backgroundColor: "lightgray", borderRadius: "10px" }}>
             <Space size={"large"}>
                 <Badge.Ribbon placement='start' color={props.online?"green":"gray"} text={props.online?"Online":"Offline"}>
                     <Badge.Ribbon color='red' text={`LVL ${props.userLvl}`}>
-                        <Image width={"100px"} src={props.userPhoto}></Image>
+                        <Image width={"100px"} src={props.userPhoto} style={{borderTopLeftRadius:10,borderBottomLeftRadius:10}}></Image>
                     </Badge.Ribbon>
                 </Badge.Ribbon>
 
