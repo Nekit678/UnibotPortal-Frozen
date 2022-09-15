@@ -6,9 +6,10 @@ import Level from './Level';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/redux-store';
 import { getTasksListId } from '../../redux/selectors/tasks-selectors';
+
 const gridStyle: React.CSSProperties = {
     width: '20%',
-    textAlign: 'center',
+    textAlign: 'center'
 };
 
 function Tasks() {
@@ -16,23 +17,24 @@ function Tasks() {
     const carouselRef: any = React.createRef();
     const tasksListId = useSelector(getTasksListId)
 
+    function selectTask(value:number) {
+        setTask(value)
+        carouselRef.current.next()
+        window.scrollTo(0, 0)
+    }
+
     return (
         <div>
             <Carousel ref={carouselRef} dots={false}>
                 <div>
                     <Card style={{ backgroundColor: "lightgray", borderRadius: "10px" }} title="Выбери уровень!">
                         {tasksListId.map((item) => (<Card.Grid key={item} style={gridStyle}>
-                            <Task selectTask={(value: number) => {
-                                setTask(value)
-                                carouselRef.current.next()
-                            }} taskNumber={item}></Task>
+                            <Task selectTask={(value: number) => selectTask(value)} taskNumber={item}></Task>
                         </Card.Grid>))}
                     </Card>
                 </div>
                 <div>
-                    <Level back={() => {
-                        carouselRef.current.prev()
-                    }} num={task}></Level>
+                    <Level back={() => carouselRef.current.prev()} num={task}></Level>
                 </div>
             </Carousel>
 
